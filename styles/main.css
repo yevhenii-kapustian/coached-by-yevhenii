@@ -48,7 +48,7 @@
     display: block;
 }
 
-.main__scroll-video video {
+.main__scroll-video img {
     width: 100%;
     max-height: 25rem;
     max-height: 25rem;
@@ -98,7 +98,7 @@
         margin-top: 2rem;
     }
 
-    .main__scroll-video video {
+    .main__scroll-video img {
         min-height: 13rem;
     }
 
@@ -109,7 +109,7 @@
 
 
 @media screen and (max-width: 480px) {
-    .main__scroll-video video {
+    .main__scroll-video img {
         min-height: 10rem;
     }
 
