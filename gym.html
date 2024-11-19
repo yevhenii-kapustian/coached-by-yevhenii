@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+    <script src="./js/gym.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+
+    <title>Yevhenii</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header__container" id="image-container">
+            <div class="header-img">
+                <img src="./img/header2.jpg" alt="mainIMG">
+            </div>
+            <div class="header__text">
+                    <h1>Coached by Yevhenii</h1>
+                    <h1>Online Coaching</h1>
+
+                    <div class="questions-container" id="questions-container">
+                        <div class="question active">
+                          <p>How can I help you?</p>
+                            <div class="question-main">
+                                <button onclick="saveAnswerAndNext(1, 'Healthy Habits')">Healthy Habits</button>
+                                <button onclick="saveAnswerAndNext(1, 'Build Muscle')">Build Muscle</button>
+                            </div>
+                        </div>
+                        
+                        <div class="question">
+                          <p>How do you identify?</p>
+                            <div class="question-main">
+                                <button onclick="saveAnswerAndNext(2, 'Male')">Male</button>
+                                <button onclick="saveAnswerAndNext(2, 'Female')">Female</button>
+                            </div>
+                          <button class="question__back-btn" onclick="showPreviousQuestion()">Back</button>
+                        </div>
+                        
+                        <div class="question">
+                          <p>I am</p>
+                             <div class="question-main question-age">
+                                <button onclick="saveAnswerAndNext(3, 'Under 18')">Under 18</button>
+                                <button onclick="saveAnswerAndNext(3, '18-24')">18-24</button>
+                                <button onclick="saveAnswerAndNext(3, '25-30')">25-30</button>
+                                <button onclick="saveAnswerAndNext(3, '30+')">30+</button>
+                             </div>
+                           <button class="question__back-btn" onclick="showPreviousQuestion()">Back</button>
+                        </div>
+                        
+                        <div class="question">
+                          <p>What is your motivation to start now?</p>
+                            <div class="question-main">
+                                <textarea id="answer4" placeholder="e.g. recent event, upcoming vacation, ..." required oninput="toggleNextButton(4)"></textarea>
+                            </div>
+                          <button class="question__back-btn" onclick="showPreviousQuestion()">Back</button>
+                          <button class="question__back-btn" id="next-btn-4" onclick="saveTextareaAndNext(4)" disabled>Next</button>
+                        </div>
+                        
+                        <div class="question">
+                          <p>Why have you chosen me to be your coach?</p>
+                            <div class="question-main">
+                                <textarea id="answer5" placeholder="..." required oninput="toggleNextButton(5)"></textarea>
+                            </div>
+                          <button class="question__back-btn" onclick="showPreviousQuestion()">Back</button>
+                          <button class="question__back-btn" id="next-btn-5" onclick="saveTextareaAndNext(5)" disabled>Next</button>
+                        </div>
+                        
+                        <div class="question">
+                          <p>Myself or my assistant will be reaching out to you via WhatsApp to discuss this program. Is it downloaded?</p>
+                            <div class="question-main">
+                                <button onclick="saveAnswerAndNext(6, 'Yes')">Yes</button>
+                                <button onclick="saveAnswerAndNext(6, 'I’ll download it now')">I’ll download it now</button>
+                            </div>
+                          <button class="question__back-btn" onclick="showPreviousQuestion()">Back</button>
+                        </div>
+                        
+                        <div class="question">
+                          <p>Are you serious about committing to my program and what has stopped you from achieving your goals so far?</p>
+                            <div class="question-main">
+                                <textarea id="answer7" placeholder="..." required oninput="toggleNextButton(7)"></textarea>
+                            </div>
+                          <button class="question__back-btn" onclick="showPreviousQuestion()">Back</button>
+                          <button class="question__back-btn" id="next-btn-7" onclick="saveTextareaAndNext(7)" disabled>Next</button>
+                        </div>
+                        
+                        <div class="question">
+                          <p>What are you struggling with at the moment?</p>
+                            <div class="question-main">
+                                <textarea id="answer8" placeholder="..." required oninput="toggleNextButton(8)"></textarea>
+                            </div>
+                          <button class="question__back-btn" onclick="showPreviousQuestion()">Back</button>
+                          <button class="question__back-btn" id="next-btn-8" onclick="saveTextareaAndNext(8)" disabled>Next</button>
+                        </div>
+                        
+                        <div class="question">
+                          <p>What do you do for a living? (Your current occupation)</p>
+                            <div class="question-main">
+                                <textarea id="answer9" placeholder="..." required oninput="toggleNextButton(9)"></textarea>
+                            </div>
+                          <button class="question__back-btn" onclick="showPreviousQuestion()">Back</button>
+                          <button class="question__back-btn" id="next-btn-9" onclick="saveTextareaAndNext(9)" disabled>Next</button>
+                        </div>
+                        
+                        <div class="question">
+                            <p>Contact information</p>
+                            <div class="question-main contact-form">
+                              <input type="text" id="answer10" placeholder="Your name" required oninput="toggleNextButton(10)">
+                              <input type="email" id="answer11" placeholder="Email" required oninput="toggleNextButton(10)">
+                              <input type="tel" id="answer12" placeholder="Your phone number" required oninput="toggleNextButton(10)">
+                              <input type="text" id="answer13" placeholder="Your Instagram handle" required oninput="toggleNextButton(10)">
+                            </div>
+                            <button class="question__back-btn" onclick="showPreviousQuestion()">Back</button>
+                            <button class="question__back-btn" id="next-btn-10" onclick="saveTextareaAndNext(10); sendAnswers()" disabled>Submit Answers</button>
+                          </div>
+                       
+                        
+                    </div>
+            </div>
+            <div class="particles"></div>
+        </div>
+        <!-- <div class="header__bottom-color"></div> -->
+    </header>
+
+
+    <main class="main">
+        <div class="main__transformation">
+          <div class="main__transformation-con">
+            <div class="main__transformation-text">
+                <h2>MY OWN TRANSFORMATION</h2>
+            </div>
+            <div class="main__transformation-sections">
+                <div class="main__transformation-section1">
+                    <div class="transformation-section1 section">
+                        <img src="./img/compere-1 (1).jpg" width="300px" alt="transformation">
+                        <h4>Form before gym</h4>
+                        <p>2020</p>
+                    </div>
+                </div>
+                <div class="main__transformation-section-arrow">
+                    <img src="./img/arrow.png" width="100px" alt="arraw">
+                </div>
+                <div class="main__transformation-section2">
+                    <div class="transformation-section2 section">
+                        <img src="./img/compere-2 (1).jpg" width="300px" alt="transormation">
+                        <h4>Current form</h4>
+                        <p>2024</p>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="main__scroll-video">
+          <video autoplay muted loop src="./img/1731964371723192 3.mov"></video>
+        </div>
+    </main>
+
+
+    
+</body>
+</html>
