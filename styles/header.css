@@ -11,6 +11,145 @@ body {
 }
 
 
+
+.burger-wrapper {
+    position: fixed;
+    z-index: 3;
+    width: 100%;
+    height: 7rem;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+}
+
+.burger-wrapper.active {
+    background-color: black;
+    opacity: 0.95;
+}
+
+.bar {
+    position: absolute;
+    left: 2.5rem;
+    z-index: 3;
+}
+
+.burger-4 input[type = "checkbox"] {
+    -webkit-appearance: none;
+    display: none;
+    visibility: hidden;
+  }
+  
+  .burger-4 .bar {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .burger-4 .bar span {
+    position: absolute;
+    width: 40px;
+    height: 4.7px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 100px;
+    display: inline-block;
+    transition: 0.3s ease;
+    left: 0;
+  }
+  
+  .burger-4 .bar span.top {
+    top: 4px;
+  }
+  
+  .burger-4 .bar span.middle {
+    top: 16px;
+  }
+  
+  .burger-4 .bar span.bottom {
+    bottom: 8px;
+  }
+  
+  .burger-4 input[type]:checked ~ span.top {
+    transform: rotate(45deg);
+    transform-origin: top left;
+    width: 48px;
+    left: 5px;
+  }
+  
+  .burger-4 input[type]:checked ~ span.bottom {
+    transform: rotate(-45deg);
+    transform-origin: top left;
+    width: 48px;
+    bottom: -1px;
+  }
+  
+  .burger-4 input[type]:checked ~ span.middle {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+
+  .burger-menu {
+    display: none; 
+    transition: all 0.8s;
+    opacity: 0; 
+    transform: translateX(-20px); 
+    transition: opacity 0.3s ease, transform 0.3s ease; 
+    padding-top: 150px;
+    padding-left: 0;
+    position: absolute;
+    top: 0rem;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(0, 0, 0);
+    z-index: 0;
+    text-align: end;
+}
+
+
+.burger-menu li {
+  text-align: center;
+}
+
+
+.burger-menu.open {
+    display: block; 
+    transition: all 0.3s;
+    transform: translateX(0);
+    opacity: 0.9; 
+   
+}
+
+.burger__link-transformation {
+    margin-bottom: 50px;
+}
+
+.burger__link-connect {
+    margin-bottom: 50px;
+}
+
+.burger-menu li {
+    color: white;
+
+}
+
+
+
+.logo-con {
+    width: 100vh;
+    left: 6rem;
+    display: flex;
+    flex: auto;
+    justify-content: center;
+}
+
+
+.logo-con img {
+    width: 110px;
+}
+
+
+
 /* Header-Con */
 
 .header__container {
@@ -40,8 +179,8 @@ body {
 .header-img img {
     width: 100%;
     height: 100%;
-    min-height: 785px;
-    max-height: 850px;
+    min-height: 90vh;
+    max-height: 90vh;
     background-repeat: no-repeat;
     object-fit: cover;
     opacity: 1;

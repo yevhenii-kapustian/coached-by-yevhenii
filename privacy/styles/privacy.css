@@ -1,0 +1,17 @@
+body {
+    background-color: black;
+}
+
+
+
+.main {
+    padding: 7rem 3rem;
+}
+
+.main h1 {
+    color: white;
+    font-size: 4rem;
+    font-weight: 500;
+    font-family: "Bebas Neue", sans-serif;
+    text-align: center;
+}
