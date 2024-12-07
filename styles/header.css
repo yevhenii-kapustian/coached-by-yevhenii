@@ -136,11 +136,12 @@ body {
 
 
 .logo-con {
+    padding-right: 1.3rem;
     width: 100vh;
     left: 6rem;
     display: flex;
     flex: auto;
-    justify-content: center;
+    justify-content: end;
 }
 
 
