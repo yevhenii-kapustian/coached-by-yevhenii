@@ -10,21 +10,21 @@ function saveAnswerAndNext(questionIndex, answer) {
 
 
 function saveTextareaAndNext(questionIndex) {
-    const activeQuestion = document.querySelector(`#questions-container .question.active`);
-    const fields = activeQuestion.querySelectorAll('input, textarea');
-  
-    fields.forEach((field, idx) => {
-      const fieldAnswerIndex = questionIndex - 1 + idx; 
-      answers[fieldAnswerIndex] = field.value.trim();
-    });
-  
-    const nextQuestion = activeQuestion.nextElementSibling;
-    if (!nextQuestion || !nextQuestion.classList.contains('question')) {
-        sendAnswers();
-    } else {
-        showNextQuestion();
-    }
+  const activeQuestion = document.querySelector(`#questions-container .question.active`);
+  const fields = activeQuestion.querySelectorAll('input, textarea');
+
+  fields.forEach((field, idx) => {
+    const fieldAnswerIndex = questionIndex - 1 + idx;
+    answers[fieldAnswerIndex] = field.value.trim();
+  });
+
+  const nextQuestion = activeQuestion.nextElementSibling;
+  if (!nextQuestion || !nextQuestion.classList.contains('question')) {
+    sendAnswers();
+  } else {
+    showNextQuestion();
   }
+}
 
 
 function toggleNextButton(questionIndex) {
@@ -79,32 +79,35 @@ function resetSurvey() {
 
 
 function sendAnswers() {
-    const accessKey = "2dbb2bf8-00d6-41c0-846f-8b872d4fa11a";
-  
-    const answersText = answers
-      .map((answer, index) => `Question ${index + 1}: ${answer || "No answer provided"}`)
-      .join('\n');
-  
-    const data = {
-      access_key: accessKey,
-      message: answersText
-    };
-  
-    fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    })
+  console.log('Answers being sent:', answers);
+
+  const accessKey = "2dbb2bf8-00d6-41c0-846f-8b872d4fa11a";
+  const answersText = answers
+    .map((answer, index) => `Question ${index + 1}: ${answer || "No answer provided"}`)
+    .join('\n');
+
+  const data = {
+    access_key: accessKey,
+    message: answersText,
+  };
+
+  fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  })
     .then(response => response.json())
     .then(data => {
-        resetSurvey();
+      console.log('Submission successful:', data);
+      resetSurvey();
     })
     .catch(error => {
-        console.error('Error submitting answers:', error);
+      console.error('Error submitting answers:', error);
     });
-  }
+}
+
+
+
 
   
   

@@ -249,21 +249,15 @@
     transition: all 0.5s;
 }
 
-/* .option {
-    display: block;
-} */
-
-/* .option.active {
-    display: none;
-} */
-
 
 .option-next {
     display: none;
+    color: black;
 }
 
 .option-back {
     display: none;
+    color: black;
 }
 
 
