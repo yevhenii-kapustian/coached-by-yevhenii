@@ -196,7 +196,7 @@ window.addEventListener('scroll', () => {
   const img = document.querySelector(".main-app__options-img img")
   const appMainText = document.querySelector(".main-app__main-text h2")
   
-  if (scrollPositionApp >= 1450 && scrollPositionApp <= 3300) {
+  if (scrollPositionApp >= 1450) {
     
     if (!appOption) {
       appOption = true;

@@ -16,7 +16,7 @@ body {
     position: fixed;
     z-index: 3;
     width: 100%;
-    height: 7rem;
+    height: 6rem;
     display: flex;
     align-items: center;
     transition: all 0.2s ease-in-out;
@@ -447,6 +447,14 @@ body {
 
     .header__text {
         top: 10%;
+    }
+
+    .burger-wrapper {
+        height: 4.8rem;
+    }
+
+    .logo-con img {
+        width: 80px;
     }
 }
 
