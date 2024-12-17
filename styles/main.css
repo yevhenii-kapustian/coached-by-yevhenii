@@ -5,6 +5,7 @@
     right: 2rem;
     z-index: 2;
     box-shadow: 0 0 40px 1px black;
+    transition: all 0.3s;
 }
 
 .button-start a {
@@ -17,10 +18,8 @@
 }
 
 
-.button-start a:hover {
-    background-color: black;
-    border: 2px solid white;
-    color: white;
+.button-start:hover {
+    opacity: 0.5;
 }
 
 /*  Statement */
@@ -260,6 +259,25 @@
     color: black;
 }
 
+.main-app__more {
+    opacity: 0.5;
+    margin: 0;
+}
+
+.main-app__more a {
+    color: black;
+    border: solid 1px black;
+    border-radius: 10px;
+    padding: 0.8rem 1.5rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.main-app__more a:hover {
+    color: white;
+    background-color: black;
+    border: solid 1px rgb(255, 255, 255);
+}
+
 
 /* Transforamtion */
 
@@ -478,6 +496,11 @@
 
     .main-app__options-img {
         margin-top: 3rem;
+    }
+
+
+    .main-app__more {
+        margin: 0 auto;
     }
 
     .option-next {
