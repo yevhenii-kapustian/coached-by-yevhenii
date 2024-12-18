@@ -260,7 +260,7 @@
 }
 
 .main-app__more {
-    opacity: 0.5;
+    opacity: 0.7;
     margin: 0;
 }
 
@@ -274,7 +274,7 @@
 
 .main-app__more a:hover {
     color: white;
-    background-color: black;
+    background-color: rgb(30, 30, 30);
     border: solid 1px rgb(255, 255, 255);
 }
 
